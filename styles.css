@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bungee+Spice&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+/* Logo name - Bungee Spice */
+/* Heading - Acme */
+/* Para - PT Sans Narrow */
+
+:root {
+    --Logo-Font: Bungee Spice;
+    --Heading-Font: Acme;
+    --Para-Font: PT Sans Narrow;
+
+    --Dark-Color: rgb(255, 136, 0);
+    --Light-Color: rgb(255, 225, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    background-image: url(img/Logo-bus.png);
+    background-size: 400px;
+    background-position: center 140px;
+    background-repeat: no-repeat;
+    inset: 0;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Light-Color) 68%, var(--Dark-Color) 90%) border-box;
+}
+
+.left-header {
+    padding: 0px 8px;
+}
+
+.left-header .image {
+    display: flex;
+    align-items: center;
+}
+
+.left-header .image img {
+    height: 80px;
+}
+
+.left-header .image .logo-title {
+    width: fit-content;
+    padding: 0px 8px;
+}
+
+.left-header .image .logo-title h2 {
+    font-family: var(--Logo-Font);
+    /* -webkit-text-stroke: 2px black; */
+    font-size: 36px;
+}
+
+.left-header .image .logo-title p {
+    font-family: var(--Para-Font);
+    width: 100%;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.right-header {
+    padding: 0px 8px;
+    border-bottom: 8px solid transparent;
+    background:
+        linear-gradient(white, white) padding-box,
+        /* content bg */
+        linear-gradient(to right, var(--Light-Color), var(--Dark-Color)) border-box;
+    /* border gradient */
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+}
+
+.right-header ul {
+    display: flex;
+    align-items: center;
+}
+
+.right-header ul li {
+    border: 2px solid var(--Dark-Color);
+    border-radius: 8px;
+    list-style: none;
+    margin: 0px 12px;
+    padding: 4px 20px;
+    transition: all 0.2s ease;
+}
+
+.right-header ul li:hover {
+    transform: scale(1.1);
+    background: linear-gradient(140deg, var(--Light-Color), var(--Dark-Color));
+    cursor: pointer;
+}
+
+.right-header ul li:hover a {
+    color: white;
+}
+
+.right-header ul li a {
+    font-family: var(--Para-Font);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+
+.message {
+    border: none !important;
+    margin: 0px !important;
+    background: none !important;
+}
+
+.right-header nav ul li a img {
+    height: 38px;
+}
+
+main .register {
+    margin: 140px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.common {
+    border: 2px solid var(--Dark-Color);
+    border-radius: 12px;
+    width: 400px;
+    padding: 16px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.common:hover {
+    transform: scale(1.02);
+    background: linear-gradient(140deg, var(--Light-Color), var(--Dark-Color));
+    border: none;
+    box-shadow: 0px 4px 8px black;
+    /* color: white; */
+}
+
+.common img {
+    height: 200px;
+}
+
+.user>img {
+    padding: 38px;
+}
+
+.common h2 {
+    font-family: var(--Heading-Font);
+}
+
+.common p {
+    font-family: var(--Para-Font);
+}
+
+.mission,
+.works {
+    width: 1340px;
+    margin: 36px auto;
+}
+
+.mission hr {
+    height: 3px;
+    border: none;
+    background: linear-gradient(to right, var(--Dark-Color) 0%, var(--Light-Color) 12%);
+    /* border-bottom: 3px solid transparent; */
+    /* background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Dark-Color) 0%, var(--Light-Color) 12%) border-box; */
+}
+
+.mission h1 {
+    padding: 0px 16px;
+    width: fit-content;
+    font-family: var(--Heading-Font);
+    font-size: 40px;
+    border-bottom: 8px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Dark-Color), var(--Light-Color)) border-box;
+}
+
+.mission p {
+    padding: 28px 16px;
+    font-family: var(--Para-Font);
+    font-size: 24px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.works hr {
+    height: 3px;
+    border: none;
+    background: linear-gradient(to right, var(--Dark-Color) 0%, var(--Light-Color) 12%);
+    /* border-bottom: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Dark-Color) 0%, var(--Light-Color) 12%) border-box; */
+}
+
+.works h1 {
+    padding: 0px 16px;
+    width: fit-content;
+    font-family: var(--Heading-Font);
+    font-size: 40px;
+    border-bottom: 8px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Dark-Color), var(--Light-Color)) border-box;
+}
+
+.features ul {
+    padding: 16px !important;
+}
+
+.features ul li {
+    list-style: none !important;
+}
+
+.works ul {
+    padding: 16px 48px;
+}
+
+.works ul li {
+    list-style: decimal;
+    font-size: 24px;
+    font-family: var(--Heading-Font);
+    font-weight: 600;
+    margin: 16px 0px;
+}
+
+.works ul li h2 {
+    font-family: var(--Heading-Font);
+    font-size: 24px;
+}
+
+.features ul li p {
+    padding: 0px 40px;
+    font-weight: 500;
+}
+
+.works ul li p {
+    font-family: var(--Para-Font);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+footer{
+    background: linear-gradient(to right, var(--Dark-Color) 0%, var(--Light-Color) 12%);
+    padding: 18px 0px;
+}
+
+footer > * {
+    margin: 18px 0px;
+}
+
+footer .social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .social-media > *{
+    margin: auto 8px;
+}
+
+footer .social-media p{
+    font-family: var(--Para-Font);
+    font-size: 26px;
+}
+
+footer .social-media a img{
+    height: 36px;
+}
+
+footer .contact-info{
+    text-align: center;
+    font-family: var(--Heading-Font);
+    font-size: 24px;
+}
+
+footer .copyright{
+    text-align: center;
+    font-family: var(--Para-Font);
+    font-size: 20px;
+}

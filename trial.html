@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Bungee+Spice&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --Logo-Font: 'Bungee Spice', cursive;
+            --Heading-Font: 'Acme', sans-serif;
+            --Para-Font: 'PT Sans Narrow', sans-serif;
+
+            --Dark-Color: rgb(255, 136, 0);
+            --Light-Color: rgb(255, 225, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--Para-Font);
+            background-color: #fdf6e3;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, var(--Light-Color), var(--Dark-Color));
+            padding: 15px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: var(--Logo-Font);
+            font-size: 32px;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            font-family: var(--Para-Font);
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .card {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h2 {
+            font-family: var(--Heading-Font);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .badges {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .badges h2 {
+            font-family: var(--Heading-Font);
+            margin-bottom: 10px;
+        }
+
+        .badge-list span {
+            display: inline-block;
+            background: linear-gradient(to right, var(--Light-Color), var(--Dark-Color));
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: var(--Dark-Color);
+            color: white;
+        }
+
+        tbody tr:hover {
+            background-color: #ffecc8;
+        }
+
+        .logout {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            background-color: var(--Dark-Color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: var(--Para-Font);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>🍱 Donor Dashboard</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Support</a>
+        </nav>
+    </header>
+
+    <section class="stats">
+        <div class="card">
+            <h2>Total Donations</h2>
+            <p>42</p>
+        </div>
+        <div class="card">
+            <h2>Food Saved (kg)</h2>
+            <p>185</p>
+        </div>
+        <div class="card">
+            <h2>People Helped</h2>
+            <p>320+</p>
+        </div>
+    </section>
+
+    <section class="badges">
+        <h2>🏅 Leaderboard & Badges</h2>
+        <div class="badge-list">
+            <span>🥇 Food Hero</span>
+            <span>🏆 Hunger Warrior</span>
+            <span>🌟 Top Contributor</span>
+        </div>
+    </section>
+
+    <section class="history">
+        <h2 style="font-family: var(--Heading-Font); margin-top: 40px;">📜 Donation History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Food Type</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-04-01</td>
+                    <td>Rice & Dal</td>
+                    <td>10 kg</td>
+                    <td>Picked</td>
+                </tr>
+                <tr>
+                    <td>2025-03-27</td>
+                    <td>Bread Packets</td>
+                    <td>25 units</td>
+                    <td>Picked</td>
+                </tr>
+                <tr>
+                    <td>2025-03-20</td>
+                    <td>Fruits</td>
+                    <td>15 kg</td>
+                    <td>Pending</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <button class="logout">🚪 Logout</button>
+</body>
+
+</html>
