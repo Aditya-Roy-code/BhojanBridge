@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Donor</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Bungee+Spice&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --Logo-Font: 'Bungee Spice', cursive;
+            --Heading-Font: 'Acme', sans-serif;
+            --Para-Font: 'PT Sans Narrow', sans-serif;
+
+            --Dark-Color: rgb(255, 136, 0);
+            --Light-Color: rgb(255, 225, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--Para-Font);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            background-image: url(../img/Logo-bus.png);
+            background-size: 400px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            inset: 0;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 420px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-family: var(--Heading-Font);
+            font-size: 32px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: var(--Para-Font);
+        }
+
+        button {
+            background-color: var(--Dark-Color);
+            color: white;
+            font-weight: bold;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e07c00;
+        }
+
+        .extra-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .extra-link a {
+            color: var(--Dark-Color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .extra-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <h2>📝 Register as Donor</h2>
+
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email" />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" />
+
+        <label for="password">Create Password</label>
+        <input type="password" id="password" name="password" required placeholder="Create a password" />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Re-enter password" />
+
+        <button type="submit">✅ Register</button>
+
+        <div class="extra-link">
+            Already have an account? <a href="donorLogin.html">Login here</a>
+        </div>
+    </form>
+
+</body>
+
+</html>
