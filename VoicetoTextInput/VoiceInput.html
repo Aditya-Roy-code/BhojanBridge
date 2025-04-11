@@ -1,0 +1,39 @@
+<button id="start">Start Recording</button>
+<button id="stop" disabled>Stop</button>
+<p><strong>Transcript:</strong> <span id="transcript">...</span></p>
+
+<script>
+  let mediaRecorder;
+  let audioChunks = [];
+
+  document.getElementById("start").onclick = async () => {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+
+    mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+    mediaRecorder.onstop = async () => {
+      const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+      const formData = new FormData();
+      formData.append('audio', audioBlob, 'recording.webm');
+
+      const response = await fetch("upload_audio.php", {
+        method: "POST",
+        body: formData
+      });
+
+      const text = await response.text();
+      document.getElementById("transcript").textContent = text;
+    };
+
+    mediaRecorder.start();
+    document.getElementById("start").disabled = true;
+    document.getElementById("stop").disabled = false;
+  };
+
+  document.getElementById("stop").onclick = () => {
+    mediaRecorder.stop();
+    document.getElementById("start").disabled = false;
+    document.getElementById("stop").disabled = true;
+  };
+</script>
