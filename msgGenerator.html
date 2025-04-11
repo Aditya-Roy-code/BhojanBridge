@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with NGO</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&family=Bungee+Spice&family=PT+Sans+Narrow:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --Logo-Font: 'Bungee Spice', cursive;
+      --Heading-Font: 'Acme', sans-serif;
+      --Para-Font: 'PT Sans Narrow', sans-serif;
+
+      --Dark-Color: rgb(255, 136, 0);
+      --Light-Color: rgb(255, 225, 0);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--Para-Font);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      background-image: url(../img/Logo-bus.png);
+      background-size: 400px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      inset: 0;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-bottom: 3px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Light-Color) 68%, var(--Dark-Color) 96%) border-box;
+    }
+
+    .left-header {
+      padding: 0px 8px;
+    }
+
+    .left-header .image {
+      display: flex;
+      align-items: center;
+    }
+
+    .left-header .image img {
+      height: 80px;
+    }
+
+    .left-header .image .logo-title {
+      width: fit-content;
+      padding: 0px 8px;
+    }
+
+    .left-header .image .logo-title h2 {
+      font-family: var(--Logo-Font);
+      /* -webkit-text-stroke: 2px black; */
+      font-size: 36px;
+    }
+
+    .left-header .image .logo-title p {
+      font-family: var(--Para-Font);
+      width: 100%;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 4px;
+    }
+
+    .chat-container {
+      background: rgba(255, 255, 255, 0.1);
+      width: 480px;
+      height: 600px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin: 10px 0px;
+    }
+
+    .chat-header {
+      background: linear-gradient(to right, var(--Light-Color), var(--Dark-Color));
+      padding: 15px;
+      text-align: center;
+      font-family: var(--Heading-Font);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      max-width: 70%;
+    }
+
+    .sent {
+      align-self: flex-end;
+      background: var(--Dark-Color);
+      color: white;
+    }
+
+    .received {
+      align-self: flex-start;
+      background: white;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      gap: 10px;
+      align-items: center;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: var(--Para-Font);
+    }
+
+    .send-btn{
+      background: var(--Dark-Color);
+      border: none;
+      color: white;
+      padding: 10px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .send-btn :hover{
+      transform: scale(1.1);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .send-btn img{
+      height: 22px;
+    }
+
+    .voice-btn {
+      background: var(--Dark-Color);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .voice-btn:hover{
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .voice-btn img {
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="left-header">
+      <div class="image">
+        <img src="../img/Logo-bus.png" alt="bus">
+        <!-- <img src="img/Logo-title.png" alt="title"> -->
+        <div class="logo-title">
+          <h2>BhojanBridge</h2>
+          <p>Digital Seva for Real Hunger</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="chat-container">
+      <div class="chat-header">Message Generator</div>
+      <div class="chat-messages">
+        <div class="message received">Hello! How can we assist you today?</div>
+        <div class="message sent">I want to know about the recent donations.</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type a message..." />
+        <button class="send-btn">
+          <img src="svg/send.svg" alt="send">
+        </button>
+        <button class="voice-btn">
+          <img src="svg/mic.svg" alt="mic">
+        </button>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
