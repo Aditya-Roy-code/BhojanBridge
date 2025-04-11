@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bungee+Spice&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+/* Logo name - Bungee Spice */
+/* Heading - Acme */
+/* Para - PT Sans Narrow */
+
+:root {
+    --Logo-Font: Bungee Spice;
+    --Heading-Font: Acme;
+    --Para-Font: PT Sans Narrow;
+
+    --Dark-Color: rgb(255, 136, 0);
+    --Light-Color: rgb(255, 225, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    background-image: url(../img/Logo-bus.png);
+    background-size: 400px;
+    background-position: center 140px;
+    background-repeat: no-repeat;
+    inset: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, var(--Light-Color) 68%, var(--Dark-Color) 96%) border-box;
+}
+
+.left-header {
+    padding: 0px 8px;
+}
+
+.left-header .image {
+    display: flex;
+    align-items: center;
+}
+
+.left-header .image img {
+    height: 80px;
+}
+
+.left-header .image .logo-title {
+    width: fit-content;
+    padding: 0px 8px;
+}
+
+.left-header .image .logo-title h2 {
+    font-family: var(--Logo-Font);
+    /* -webkit-text-stroke: 2px black; */
+    font-size: 36px;
+}
+
+.left-header .image .logo-title p {
+    font-family: var(--Para-Font);
+    width: 100%;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+.right-header {
+    padding: 0px 8px;
+    border-bottom: 8px solid transparent;
+    background:
+        linear-gradient(white, white) padding-box,
+        /* content bg */
+        linear-gradient(to right, var(--Light-Color), var(--Dark-Color)) border-box;
+    /* border gradient */
+    height: 80px;
+    /* width: 430px; */
+    display: flex;
+    align-items: center;
+}
+
+.right-header ul {
+    display: flex;
+    align-items: center;
+}
+
+.right-header ul li {
+    border: 2px solid var(--Dark-Color);
+    border-radius: 8px;
+    list-style: none;
+    margin: 0px 12px;
+    padding: 4px 20px;
+    transition: all 0.2s ease;
+}
+
+.right-header ul li:hover {
+    transform: scale(1.1);
+    background: linear-gradient(140deg, var(--Light-Color), var(--Dark-Color));
+    cursor: pointer;
+}
+
+.right-header ul li:hover a {
+    color: white;
+}
+
+.right-header ul li a {
+    font-family: var(--Para-Font);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+
+.message {
+    border: none !important;
+    margin: 0px !important;
+    background: none !important;
+}
+
+.right-header nav ul li a img {
+    height: 38px;
+}
+
+main .container{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+main .container .hero{
+    width: 500px;
+    height: 604px;
+    border-radius: 12px;
+    border: 14px solid white;
+    box-shadow: 0px 4px 14px grey;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+main .container .hero .tile{
+    border-radius: 8px;
+    background-color: rgba(194, 194, 194, 0.7);
+    padding: 12px;
+    margin: 12px 0px;
+}
+
+main .container .hero .tile h2{
+    font-family: var(--Heading-Font);
+}
+
+main .container .hero .tile p{
+    font-family: var(--Para-Font);
+    font-weight: 500;
+    text-align: justify;
+    line-height: 18px;
+}
+
+main .container .hero .tile ul{
+    padding: 4px 16px;
+    font-family: var(--Para-Font);
+    font-weight: 600;
+}
